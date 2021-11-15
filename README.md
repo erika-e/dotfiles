@@ -11,7 +11,8 @@ When I did this, I got notified that I needed to install:
 * Message about installing pip3
 Let's hope neither of those cause problems later
 
-TODO: Add Rosetta Instructions 
+Open applications in Finder. Using the options menu in the top right or a right click, open the menu for iTerm and select `Duplicate`. On the new copy, select `Get Info` and check the option to `Open using Rosetta`. You'll be prompted to install Rosetta.
+
 
 ## Git Setup 
 
@@ -22,3 +23,7 @@ To fix this:
 1. Generate a PAT [instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) 
 2. Enter it instead of your password when prompted on the command line
 
+Resolved this by making it public - entering the PAT by copying and pasting into the command line did not work.
+
+## Run the Setup Script
+I pasted it straight into the iTerm2 terminal. 
