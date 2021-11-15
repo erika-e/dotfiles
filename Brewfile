@@ -1,5 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "homebrew/bundle"
+tap "homebrew/cask"
 
 brew "git"
 brew "gnu-sed"
