@@ -7,6 +7,15 @@
 echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Create a directory for repos
+mkdir code
+cd code
+
+#install git to get the brewfile
+brew install git
+git clone https://github.com/erika-e/dotfiles.git
+cd dotfiles
+
 # Install dependencies from Brewfile
 brew bundle install
 
