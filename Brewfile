@@ -1,15 +1,13 @@
 tap "homebrew/bundle"
-tap "homebrew/core"
-tap "homebrew/bundle"
 tap "homebrew/cask"
-
+tap "homebrew/core"
+tap "microsoft/git"
 brew "git"
 brew "gnu-sed"
 brew "jq"
 brew "node", link: false
 brew "watchman"
-
-# cask "iterm2" #already installed if following readme
+cask "git-credential-manager-core"
 cask "google-chrome"
 cask "loom"
 cask "slack"

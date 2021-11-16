@@ -27,18 +27,29 @@ cd dotfiles
 # Install dependencies from Brewfile
 brew bundle install
 
-# Add step to install dependencies from Brewfile
 # Install OH-MY-ZSH and auto suggestions
 # https://ohmyz.sh/
-echo
-echo
-echo "Installing OH-MY-ZSH..."
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
-&& brew install zsh-autosuggestions
-echo "Get .zshrc config, saved at location: $HOME/.zshrc..."
-# assumes this is running in the repo directory, test this first
-#cp .zshrc ~/.zshrc
+
+# Check for and install oh-my-zsh if not already installed
+if [ -d ~/.oh-my-zsh ]; \
+then echo "oh-my, it's already installed" ; \
+else echo "oh-my-zsh not installed, installing..." && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; \
+fi
+
+# Check for and install zsh-autosuggestions
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] ; \
+then echo "zsh-autosuggestions is in the house" ; \
+else echo "Installing zsh-autosuggestions" && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; \
+fi
+
+# Copy and source ~/.zshrc
+cp .zshrc ~/.zshrc
+
 
 # Install Extensions for VS Code
 # https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command
 # < file tr '\n' '\0' | xargs -0 -I{} command --option {} this shell script can do it
+
+## Configure Git Globally
+git config --global user.name 'erika-e'
+git config --global user.email 'erika.e.pullum@gmail.com'
