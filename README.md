@@ -18,20 +18,7 @@ Open applications in Finder. Using the options menu in the top right or a right
 
 ## Git Setup
 
-If you try to run the script as is, you'll get the following error when you
- try to sign in to github:
-
-```cmd
-remote: Support for password authentication was removed on August 13, 2021. 
-Please use a personal access token instead.
-```
-
-To fix this:
-
-1. Generate a PAT [instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-2. Enter it instead of your password when prompted on the command line
-
-Resolved this by making it public - entering the PAT by copying and pasting into the command line did not work.
+This script uses [Git Credential Manager Core](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git). You should be prompted to sign in during the setup process. If you're not, you will be prompted the first time you try to clone a repository with `https`
 
 ## Run the Setup Script
 
@@ -45,27 +32,28 @@ Current state:
 * Installs git from the command line with brew
 * Installs brewfile dependencies
 * Installs oh my zsh
+* Fixed zsh-autosuggestions
 
 Things to do:
 
+* Export VS Code settings
+* Create a test dbt project
+* Use dbt settings from VS Code article
 * Finish & Correct VSCode setup
+* Add shell scripts to copy settings up and down
 * Add a shell script for maintaining the repo, e.g. updating .zshrc, the Brewfile, and the VSCode extension list
 
-Need to find a way to add the VS Code path without having to run the command from VSCode.
-Tried: Adding it to ~.zshrc but that breaks the shell entirely. Running the below fixes the breaking.
+Updating dependencies:
 
-Likely: Need to append to the path not reset it. [Here](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout?newreg=741ab675789d4b1ba96862d40c2bb2d7)
-is a long discussion of what goes where in each file. But, since I don't have .zshenv yet try the append method first.
+* dump the brewfile
+* copy ~/.zshrc to .zshrc in dotfiles
+* export the vs code extensions to the repo file
 
-```cmd
-PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
-export PATH
-```
+Copying settings down:
 
-## Open VS Code
-
-In theory, this part should be doable by adding the VS Code path to the `.zshrc` file.
-To get my extensions out of VS Code on my old mac I used the [menu option](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac) to add it to the path.
+* Copy .zshrc to ~/.zshrc
+* Install everything in the brewfile
+* Install the extensions
 
 ### Command Line Extension Management
 
