@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # Add Visual Studio Code (code)
-export PATH+="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+PATH+="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
