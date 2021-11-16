@@ -1,0 +1,18 @@
+{
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "explorer.confirmDelete": false,
+    "terminal.integrated.tabs.enabled": true,
+    "editor.rulers": [
+        80
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "jupyter.interactiveWindowMode": "perFile",
+    "vscode-yaml-sort.customSortKeywords_2": [
+        "name"
+    ]
+}
