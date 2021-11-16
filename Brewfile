@@ -9,7 +9,7 @@ brew "jq"
 brew "node", link: false
 brew "watchman"
 
-cask "iterm2"
+# cask "iterm2" #already installed if following readme
 cask "google-chrome"
 cask "loom"
 cask "slack"
