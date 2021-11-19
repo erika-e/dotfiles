@@ -1,7 +1,5 @@
 # setup_mac.sh
 
-# Inspiration: https://github.com/GClunies/.dotfile/blob/master/analytics_eng_setup/analytics_eng_setup_mac.sh
-
 # Install homebrew
 # https://brew.sh/
 echo "Installing Homebrew..."
@@ -13,6 +11,13 @@ brew install git
 # Install git credential manager
 brew tap microsoft/git
 brew install --cask git-credential-manager-core
+
+## Configure git globally
+echo "Configuring git name and email globally "
+read  "gitusername?Enter git user.name"
+git config --global user.name $gitusername
+read  "gituseremail?Enter git user.email" 
+git config --global user.email $gituseremail
 
 # Create a directory for repos
 echo "Creating code directory"
@@ -46,13 +51,6 @@ fi
 cp .zshrc ~/.zshrc
 source ~/.zshrc
 
-## Configure git globally
-echo "Configuring git name and email globally "
-read  "gitusername?Enter git user.name"
-git config --global user.name $gitusername
-read  "gituseremail?Enter git user.email" 
-git config --global user.email $gituseremail
-
 # Install extensions for VSCode
 # https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command
 # < file tr '\n' '\0' | xargs -0 -I{} command --option {} this shell script can do it
@@ -61,7 +59,7 @@ git config --global user.email $gituseremail
 # Create the VSCode settings file
 touch "$HOME/Library/Application Support/Code/User/settings.json"
 
-# Copy the template settings file 
+# Copy the template settings file to the system location
 cp settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
 # Set up a sandbox dbt project
