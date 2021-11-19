@@ -1,6 +1,7 @@
 # dotfiles
 
-Analytics Engineering dotfiles for an M1 Mac
+Analytics engineering dotfiles for an M1 macbook. This assumes you want to use
+VSCode for your development environment.
 
 ## To set up a brand new M1 Macbook
 
@@ -132,3 +133,5 @@ Things to do:
 * [VS Code Help Docs](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management)
 * [`code` command not working](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac)
 * [Brewfile Best Practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)
+
+The resources above shaped my thinking and choices in this repo. As is usual in programming, I also consulted approx 1 million billion stack overflow posts.
