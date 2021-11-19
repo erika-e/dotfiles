@@ -10,6 +10,7 @@ brew "python@3.9"
 brew "node", link: false
 brew "watchman"
 brew "dbt-labs/dbt/dbt"
+cask "dbeaver-community"
 cask "git-credential-manager-core"
 cask "google-chrome"
 cask "loom"
