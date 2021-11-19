@@ -3,7 +3,6 @@ bastienboutonnet.vscode-dbt
 bcanzanella.openmatchingfiles
 cschleiden.vscode-github-actions
 DavidAnson.vscode-markdownlint
-donjayamanne.githistory
 GitHub.vscode-pull-request-github
 innoverio.vscode-dbt-power-user
 kopub.pydocstring
@@ -13,4 +12,6 @@ ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
 samuelcolvin.jinjahtml

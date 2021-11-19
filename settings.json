@@ -4,17 +4,14 @@
         "*.sql": "jinja-sql"
     },
     //auto-added by Jupyter extension?
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "jupyter.interactiveWindowMode": "perFile",
     
     //?
     "terminal.integrated.tabs.enabled": true,
-    // can be upadted to whatever preference
+    // can be upadte to whatever preference
     "editor.rulers": [80],
 
     // show whitespaces as dots
