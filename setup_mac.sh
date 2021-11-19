@@ -56,6 +56,7 @@ git config --global user.email $gituseremail
 # Install Extensions for VS Code
 # https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command
 # < file tr '\n' '\0' | xargs -0 -I{} command --option {} this shell script can do it
+< vscode-extensions.txt tr '\n' '\0' | xargs -0 -I{} code --install-extension {}
 
 # Set Up a Sandbox dbt Project
 cd ~/code
