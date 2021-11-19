@@ -40,7 +40,7 @@ remove anything you don't need.
 * Create the VSCode `settings.json` if it does not exist and copy the `settings.json` from this repo to the appropriate location
 * Clone my local testing [jaffle_shop](https://github.com/erika-e/jaffle_shop) dbt project and append a `jaffle_shop` profile to your profiles.yml if it already existed
 
-## Run the Setup Script
+## Run the setup script
 
 > 🚧   **Danger Zone**
 >
@@ -49,12 +49,39 @@ remove anything you don't need.
 I copied it from the repo in a browser window and pasted it straight into the
 iTerm2 Rosetta terminal
 
-## Manual Steps
+## Manual steps
 
 I didn't get docker to install from brew, though some folks
 [say they have](https://stackoverflow.com/questions/67010057/how-to-run-docker-on-apple-silicon-m1)
 I went to the [Docker website](https://docs.docker.com/desktop/mac/apple-silicon/)
 and installed it manually.
+
+## Keeping things updated
+
+As you work, you may want to continue to customize these files for your purposes.
+I've added two scripts that will help keep things up to date so I don't have to
+remember and run shell commands all the time.
+
+### `update_dotfiles.sh`
+
+This script copies dotfiles, settings, and your Brewfile from your local machine
+to the local repository. This won't commit the changes -- that's intentional! This
+gives you time to check them out and make sure everything looks good.
+
+Use this script if you've made changes while working to make your setup more
+efficient and effective.
+
+Here's what `update_dotfiles.sh` will do:
+
+* Set your working directory to `~/code/dotfiles`
+* Update your `Brewfile`
+* Update everything that's installed
+* Copy your local `~/.zshrc` to the repo's `.zshrc`
+* Update the list of installed VSCode extensions
+* Update `settings.json` with your VSCode settings
+
+The first time you run it, you need to run `chmod +x update_dotfiles.sh`, after
+that you'll be able to run `./update_dotfiles.sh` to run the script
 
 ## Below This Point Are Working Notes
 
@@ -72,6 +99,7 @@ Current state:
 Things to do:
 
 * Revisit VS code Settings
+* Do some dbt work and finish fleshing out aliases etc in .zshrc
 * Add shell scripts to copy settings up and down
 * Add a shell script for maintaining the repo, e.g. updating .zshrc, the Brewfile, and the VSCode extension list
 * Check out [these best practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f) before adding update scripts
@@ -100,3 +128,4 @@ Copying settings down:
 * [Setting up VSCode to use with the dbt CLI](https://discourse.getdbt.com/t/setting-up-vscode-to-use-with-the-dbt-cli/3291)
 * [VS Code Help Docs](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management)
 * [`code` command not working](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac)
+* [Brewfile Best Practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)

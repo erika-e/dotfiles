@@ -1,3 +1,4 @@
+tap "buo/cask-upgrade"
 tap "dbt-labs/dbt"
 tap "homebrew/bundle"
 tap "homebrew/cask"
