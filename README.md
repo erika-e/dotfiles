@@ -4,9 +4,9 @@ Analytics Engineering dotfiles for an M1 Mac
 
 ## Setup Steps
 
-Open your new mac and go through all the setup screens - this takes a little while.
-Once complete, you'll need [iTerm2](https://iterm2.com/). When I did this, I was
-notified that I needed to install:
+Open your new mac and go through all the setup screens - this takes a little
+while. Once complete, you'll need to download and install [iTerm2](https://iterm2.com/).
+When I did this, I was notified that I needed to install:
 
 * Developer tools
 * Message about installing pip3
@@ -26,7 +26,8 @@ will be prompted the first time you try to clone a repository with `https`
 
 ## Run the Setup Script
 
-I pasted it straight into the iTerm2 terminal.
+I copied it from the repo in a browser window and pasted it straight into the
+iTerm2 terminal
 
 ## What this Script Does
 
@@ -42,7 +43,8 @@ I pasted it straight into the iTerm2 terminal.
 
 ## Manual Steps
 
-I didn't get docker to install from brew, though some folks [say they have](https://stackoverflow.com/questions/67010057/how-to-run-docker-on-apple-silicon-m1)
+I didn't get docker to install from brew, though some folks
+[say they have](https://stackoverflow.com/questions/67010057/how-to-run-docker-on-apple-silicon-m1)
 I went to the [Docker website](https://docs.docker.com/desktop/mac/apple-silicon/)
 and installed it manually.
 
@@ -55,13 +57,13 @@ Current state:
 * Installs brewfile dependencies
 * Installs oh my zsh
 * Fixed zsh-autosuggestions
+* Installs the VSCode extensions
+* Updates VSCode settings
 
 Things to do:
 
-* Export VS Code settings
 * Create a test dbt project
-* Use dbt settings from VS Code article
-* Finish & Correct VSCode setup
+* Revisit VS code Settings
 * Add shell scripts to copy settings up and down
 * Add a shell script for maintaining the repo, e.g. updating .zshrc, the Brewfile, and the VSCode extension list
 
