@@ -2,11 +2,12 @@
 
 Analytics Engineering dotfiles for an M1 Mac
 
-## Setup Steps
+## To set up a brand new M1 Macbook
+
+### Do the basics then install iTerm2
 
 Open your new mac and go through all the setup screens - this takes a little
-while. Once complete, you'll need to download and install [iTerm2](https://iterm2.com/).
-When I did this, I was notified that I needed to install:
+while. Once complete, you'll need to download and install [iTerm2](https://iterm2.com/). When I did this, I was notified that I needed to install:
 
 * Developer tools
 * Message about installing pip3
@@ -16,30 +17,37 @@ Let's hope neither of those cause problems later
 Open applications in Finder. Using the options menu in the top right or a right
 click, open the menu for iTerm and select `Duplicate`. On the new copy, select
 `Get Info` and check the option to `Open using Rosetta`. You'll be prompted to
-install Rosetta.
+install Rosetta. I renamed mine so I can tell the difference.
 
-## Git Setup
+### Check the setup script
 
-This script uses [Git Credential Manager Core](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git).
-You should be prompted to sign in during the setup process. If you're not, you
-will be prompted the first time you try to clone a repository with `https`
+There are comments in `setup_mac.sh` that indicate what everything does. You can
+remove anything you don't need.
+
+### What the script will do
+
+* Install [Homebrew](https://brew.sh/) to manage packages and software on your mac
+* Install [git](https://git-scm.com/) using homebrew
+* Install [Git Credential Manager Core](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git), which should prompt you to sign in during the setup process. If you're not, it should happen the first time you clone a repository with `https` in the URI
+* Prompt you to configure git `user.name` and `user.email` globally
+* Create a directory called `code` in the directory your terminal was in when you ran the script
+* Clone the repository where you're reading this README
+* Use the `Brewfile` from the repository to install things -- check out the brewfile to see what will be installed
+* Install [Oh-My-Zsh](https://ohmyz.sh/)
+* Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* Copy the `.zshrc` from this repo to `~/.zshrc`
+* Install VSCode extensions [with the command line](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management). You can find the extensions that will be installed in `vscode-extensions.txt`
+* Create the VSCode `settings.json` if it does not exist and copy the `settings.json` from this repo to the appropriate location
+* Clone my local testing [jaffle_shop](https://github.com/erika-e/jaffle_shop) dbt project and append a `jaffle_shop` profile to your profiles.yml if it already existed
 
 ## Run the Setup Script
 
+> 🚧   **Danger Zone**
+>
+> Make sure you're good with everything above before you proceed. Since the setup script was intended for new mac setup, it assumes it can overwite files. Make backups if you are unsure about anything.
+
 I copied it from the repo in a browser window and pasted it straight into the
-iTerm2 terminal
-
-## What this Script Does
-
-* Installs [Homebrew](https://brew.sh/) to manage packages and software on your mac
-* Installs [git](https://git-scm.com/) using homebrew
-* Creates a directory called `code` in the directory your terminal was in when you ran the script
-* Clones the repository where you're reading this README
-* Uses the `Brewfile` from the repository to install most of what you need
-* Installs [Oh-My-Zsh](https://ohmyz.sh/)
-* Prompts to configure git `user.name` and `user.email` globally
-* Installs VSCode extensions [with the command line](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management)
-* Clones the [jaffle_shop](https://github.com/erika-e/jaffle_shop) dbt project and appends a `jaffle_shop` profile to your profiles.yml if it already existed
+iTerm2 Rosetta terminal
 
 ## Manual Steps
 
@@ -59,13 +67,14 @@ Current state:
 * Fixed zsh-autosuggestions
 * Installs the VSCode extensions
 * Updates VSCode settings
+* Create a test dbt project
 
 Things to do:
 
-* Create a test dbt project
 * Revisit VS code Settings
 * Add shell scripts to copy settings up and down
 * Add a shell script for maintaining the repo, e.g. updating .zshrc, the Brewfile, and the VSCode extension list
+* Check out [these best practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f) before adding update scripts
 
 Updating dependencies:
 
@@ -79,14 +88,15 @@ Copying settings down:
 * Install everything in the brewfile
 * Install the extensions
 
-### Command Line Extension Management
+## Resources I looked at along the way
 
-* [VS Code Help Docs](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management)
-* [Parse each line of a text file as an arguement to a command](https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command)
-
-## Resources I Used Along the Way
-
+* [Brew bundle quick guide](https://tomlankhorst.nl/brew-bundle-restore-backup/)
 * [Parsing text file arguements to commands](https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command)
 * [Get dbt up and running from the command line on a MacBook with an M1 chip](https://discourse.getdbt.com/t/get-dbt-up-and-running-from-the-command-line-on-a-macbook-with-an-m1-chip/2908)
 * [GClunies dotfile repo](https://github.com/GClunies/.dotfile)
+* [Moncef Belyamani automating new mac setup](https://www.moncefbelyamani.com/automating-the-setup-of-a-new-mac-with-all-your-apps-preferences-and-development-tools/)
+* [tannerbeam dotfile repo](https://github.com/tannerbeam/dotfiles)
+* [Docker on an M1 Mac](https://til.simonwillison.net/macos/running-docker-on-remote-m1)
 * [Setting up VSCode to use with the dbt CLI](https://discourse.getdbt.com/t/setting-up-vscode-to-use-with-the-dbt-cli/3291)
+* [VS Code Help Docs](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management)
+* [`code` command not working](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac)
