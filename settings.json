@@ -1,18 +1,26 @@
-{
+{   
+    // associate SQL files with better jinja extension
+    "files.associations": {
+        "*.sql": "jinja-sql"
+    },
+    //auto-added by Jupyter extension?
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter-notebook",
             "filenamePattern": "*.ipynb"
         }
     ],
-    "explorer.confirmDelete": false,
-    "terminal.integrated.tabs.enabled": true,
-    "editor.rulers": [
-        80
-    ],
-    "diffEditor.ignoreTrimWhitespace": false,
     "jupyter.interactiveWindowMode": "perFile",
-    "vscode-yaml-sort.customSortKeywords_2": [
-        "name"
-    ]
+    
+    //?
+    "terminal.integrated.tabs.enabled": true,
+    // can be upadted to whatever preference
+    "editor.rulers": [80],
+
+    // show whitespaces as dots
+    "editor.renderWhitespace": "all",
+
+    // easier to see if there are unsaved changes
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.labelFormat": "medium"
 }

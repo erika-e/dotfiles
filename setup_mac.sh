@@ -46,19 +46,25 @@ fi
 cp .zshrc ~/.zshrc
 source ~/.zshrc
 
-## Configure Git Globally
+## Configure git globally
 echo "Configuring git name and email globally "
 read  "gitusername?Enter git user.name"
 git config --global user.name $gitusername
 read  "gituseremail?Enter git user.email" 
 git config --global user.email $gituseremail
 
-# Install Extensions for VS Code
+# Install extensions for VSCode
 # https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command
 # < file tr '\n' '\0' | xargs -0 -I{} command --option {} this shell script can do it
 < vscode-extensions.txt tr '\n' '\0' | xargs -0 -I{} code --install-extension {}
 
-# Set Up a Sandbox dbt Project
+# Create the VSCode settings file
+touch "$HOME/Library/Application Support/Code/User/settings.json"
+
+# Copy the template settings file 
+cp settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+
+# Set up a sandbox dbt project
 cd ~/code
 if [ -d jaffle_shop ]; then rm -rf jaffle_shop ; fi
 git clone https://github.com/erika-e/jaffle_shop.git
