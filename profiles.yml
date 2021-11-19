@@ -1,0 +1,15 @@
+# This is an example file for a local postgres instance
+# Never commit your profiles.yml file! It should never be located within your dbt project.
+
+jaffle_shop:
+  target: local
+  outputs:
+  local:
+    type: postgres
+    host: localhost
+    user: postgres
+    pass: docker
+    port: 5432
+    dbname: postgres
+    schema: public
+    threads: 1
