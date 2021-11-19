@@ -5,7 +5,6 @@ cschleiden.vscode-github-actions
 DavidAnson.vscode-markdownlint
 donjayamanne.githistory
 GitHub.vscode-pull-request-github
-hashicorp.terraform
 innoverio.vscode-dbt-power-user
 kopub.pydocstring
 mechatroner.rainbow-csv

@@ -62,7 +62,11 @@ cd ~/code
 if [ -d jaffle_shop ]; then rm -rf jaffle_shop ; fi
 git clone https://github.com/erika-e/jaffle_shop.git
 
-# Make a default dbt profile file
-mkdir ~/.dbt
+# Create a dbt directory if it doesn't exist
+mkdir -p ~/.dbt
+
+# Create profiles.yml if it doesn't exist
 touch ~/.dbt/profiles.yml
+
+#Append the contents of the sample profiles.yml to the existing profiles.yml
 cat dotfiles/profiles.yml >> ~/.dbt/profiles.yml
