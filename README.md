@@ -83,6 +83,24 @@ Here's what `update_dotfiles.sh` will do:
 The first time you run it, you need to run `chmod +x update_dotfiles.sh`, after
 that you'll be able to run `./update_dotfiles.sh` to run the script
 
+### `update_local.sh`
+
+This script installs the programs specified by your Brewfile and copies the
+settings from the dotfiles repo to your machine.
+
+Here's what `update_local.sh` will do:
+
+* Set your working directory to `~/code/dotfiles`
+* Pull from the dotfiles remote
+* Install the dependencies from the `Brewfile`
+* Overwite and source `~/.zshrc`
+* Install extensions for VSCode
+* Overwite and `settings.json`
+
+## Future Enhancements
+
+I'd love pull requests!
+
 ## Below This Point Are Working Notes
 
 Current state:
@@ -100,21 +118,6 @@ Things to do:
 
 * Revisit VS code Settings
 * Do some dbt work and finish fleshing out aliases etc in .zshrc
-* Add shell scripts to copy settings up and down
-* Add a shell script for maintaining the repo, e.g. updating .zshrc, the Brewfile, and the VSCode extension list
-* Check out [these best practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f) before adding update scripts
-
-Updating dependencies:
-
-* dump the brewfile
-* copy ~/.zshrc to .zshrc in dotfiles
-* export the vs code extensions to the repo file `code --list-extensions > vscode-extensions.txt`
-
-Copying settings down:
-
-* Copy .zshrc to ~/.zshrc
-* Install everything in the brewfile
-* Install the extensions
 
 ## Resources I looked at along the way
 
