@@ -18,6 +18,7 @@ read  "gitusername?Enter git user.name"
 git config --global user.name $gitusername
 read  "gituseremail?Enter git user.email" 
 git config --global user.email $gituseremail
+git config --global init.defaultBranch main
 
 # Create a directory for repos
 echo "Creating code directory"

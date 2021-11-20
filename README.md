@@ -119,7 +119,6 @@ Things to do:
 
 * Revisit VS code Settings
 * Do some dbt work and finish fleshing out aliases etc in .zshrc
-* hint:   git config --global init.defaultBranch <name> - set default branch config to main
 
 ## Resources I looked at along the way
 
