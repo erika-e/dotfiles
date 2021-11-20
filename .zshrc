@@ -82,6 +82,10 @@ source $ZSH/oh-my-zsh.sh
 # Add Visual Studio Code (code)
 PATH+="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# Optional - remove if not using jekyll
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -123,4 +127,5 @@ function dbtah() {
     gsed -i "s/$1/dim_users/" analysis/audit_helper_template.sql
     say copy pasta
 }
+
 
