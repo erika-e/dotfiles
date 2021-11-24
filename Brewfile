@@ -9,7 +9,7 @@ brew "gnu-sed"
 brew "jq"
 brew "python@3.9"
 brew "node", link: false
-brew "pgloader"
+brew "openssl@3"
 brew "ruby"
 brew "watchman"
 brew "dbt-labs/dbt/dbt"
