@@ -104,8 +104,24 @@ PATH+="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# dbt aliases
+alias dbtr="dbt --warn-error run --fail-fast" # sensible local defaults
+alias dbtt="dbt test" # run all tests
+alias dbtb="dbt build" # run build command https://docs.getdbt.com/reference/commands/build
+alias dbtdg="dbt docs generate"
+alias dbtds="dbt docs serve"
+alias dbtc="dbt compile"
+alias dbtfresh="dbt clean" #so fresh and so clean clean
+
+# docker and docker compose aliases
+alias dcu="docker-compose up"
+alias dcs="docker-compose stop"
+alias dcdv="docker-compose down -v" #remove mounted volumes
+alias dvl="docker volume ls"
+alias dps="docker ps"
+
 # Functions
-function dbtr() {
+function dbtrff() {
    dbt run -m $1 --fail-fast
    say done
 }
@@ -126,4 +142,3 @@ function dbtah() {
 
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
-
