@@ -12,7 +12,7 @@ brew "node", link: false
 brew "openssl@3"
 brew "ruby"
 brew "watchman"
-brew "dbt-labs/dbt/dbt"
+brew "dbt-labs/dbt/dbt", link: false
 cask "dbeaver-community"
 cask "git-credential-manager-core"
 cask "google-chrome"
