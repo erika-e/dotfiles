@@ -45,10 +45,12 @@ remove anything you don't need.
 
 > 🚧   **Danger Zone**
 >
-> Make sure you're good with everything above before you proceed. Since the setup script was intended for new mac setup, it assumes it can overwite files. Make backups if you are unsure about anything.
+> Make sure you're good with everything above before you proceed. Since the
+setup script was intended for new mac setup, it assumes it can overwite files.
+Make backups if you are unsure about anything.
 
-I copied it from the repo in a browser window and pasted it straight into the
-iTerm2 Rosetta terminal
+I copied the code from `setup_mac.sh` from the repo in a browser window and
+pasted it straight into the iTerm2 Rosetta terminal.
 
 ## Manual steps
 
@@ -56,6 +58,15 @@ I didn't get docker to install from brew, though some folks
 [say they have](https://stackoverflow.com/questions/67010057/how-to-run-docker-on-apple-silicon-m1)
 I went to the [Docker website](https://docs.docker.com/desktop/mac/apple-silicon/)
 and installed it manually.
+
+## What I can't Get Working on M1
+
+### pgloader
+
+I tried installing [pgloader](https://github.com/dimitri/pgloader). I was able
+to get it to install with Homebrew, but I wasn't able to get it to run. There is
+an [open issue](https://github.com/dimitri/pgloader/issues/1312) for it on the
+pgloader repo.
 
 ## Keeping things updated
 
@@ -96,7 +107,7 @@ Here's what `update_local.sh` will do:
 * Install the dependencies from the `Brewfile`
 * Overwite and source `~/.zshrc`
 * Install extensions for VSCode
-* Overwite and `settings.json`
+* Overwite your local `settings.json` with `settings.json` from the repo
 
 ## Future Enhancements
 
@@ -119,6 +130,10 @@ Things to do:
 
 * Revisit VS code Settings
 * Do some dbt work and finish fleshing out aliases etc in .zshrc
+* Add git aliases - use MH dotfiles as inspo
+* Add audithelper to dbt project
+* Add default dbt deps file
+* Add spellchecking extension for VSCode
 
 ## Resources I looked at along the way
 
@@ -134,4 +149,5 @@ Things to do:
 * [`code` command not working](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac)
 * [Brewfile Best Practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)
 
-The resources above shaped my thinking and choices in this repo. As is usual in programming, I also consulted approx 1 million billion stack overflow posts.
+The resources above shaped my thinking and choices in this repo. As is usual in
+programming, I also consulted approx 1 million billion stack overflow posts.

@@ -13,6 +13,8 @@ export SDKROOT=$(xcrun --show-sdk-path)
 brew install ruby
 
 #Update ~/.zshrc with exported path
+#Note : if Ruby version is different you will need to change this path, which is annoying
+#Updating this so it's automatic would make a great PR for someone looking to contribute!
 echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
 
 # Install jekyll and the bundler
