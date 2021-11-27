@@ -132,11 +132,19 @@ function dbtrt() {
 }
 
 function dbtah() {
-    #todo recreate this template - this only works if the template exists
-    gsed -i "s/dim_users/$1/" analysis/audit_helper_template.sql
+    # note: to use this function you will need the template
+    # copy audit_helper_template.sql from dotfiles to the analysis directory of your dbt project
+    # update defaults as required
+    # substitute the model name from the arguement
+    gsed -i "s/model_to_audit/$1/" analysis/audit_helper_template.sql
+    # enable the audit_helper_template
+    gsed -i 's/enabled = false/enabled = true/' analysis/audit_helper_template.sql
+    # compile
     dbt compile -m audit_helper_template
-    cat target/compiled/aula_data_models/analysis/audit_helper_template.sql | awk NF | pbcopy
-    gsed -i "s/$1/dim_users/" analysis/audit_helper_template.sql
+    cat target/compiled/*/analysis/audit_helper_template.sql | awk NF | pbcopy
+    # modify the template back to the defaults
+    gsed -i 's/enabled = true/enabled = false/' analysis/audit_helper_template.sql
+    gsed -i "s/$1/model_to_audit/" analysis/audit_helper_template.sql
     say copy pasta
 }
 

@@ -123,6 +123,19 @@ Here's what `update_local.sh` will do:
 * Install extensions for VSCode
 * Overwrite your local `settings.json` with `settings.json` from the repo
 
+## What's in this Repository
+
+| File Name | Associated With | Short Description | Requires |
+| --- | --- | --- | --- |
+| `.zshrc` | zsh, Oh-My-Zsh | Z-shell resource file, runs every time zsh is started. Contains plugins, aliases, functions | Oh-My-Zsh |
+| `Brewfile` | Homebrew | File listing packages and programs installed by Homebrew | Homebrew |
+| `vscode-extensions.txt` | VS Code | File listing extensions to install for VS Code | VSCode, `code` command line tools |
+| `settings.json` | VS Code | Settings file for VSCode | VSCode, the extensions listed in `vscode-extensions.txt` |
+| `profiles.yml` | dbt | Sample `profiles.yml` file, see [dbt docs](https://docs.getdbt.com/dbt-cli/configure-your-profile) for more | dbt |
+| `packages.yml` | dbt | Sample `packages.yml` file. This contains the packages I always want when working with dbt | dbt |
+| `audit_helper_template.sql` | dbt-audit-helper | A template file that works with a custom shell function to make audit helper ez-peasy | dbt, dbt-audit-helper |
+| `requirements.txt` | Python | Packages to install globally for Python, not required and not installed automatically by the setup script. Included for reference. | Python |
+
 ## Future Enhancements
 
 I'd love pull requests! I've added a few issues for things I noticed while
