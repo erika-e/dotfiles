@@ -46,7 +46,7 @@ remove anything you don't need.
 > 🚧   **Danger Zone**
 >
 > Make sure you're good with everything above before you proceed. Since the
-setup script was intended for new mac setup, it assumes it can overwite files.
+setup script was intended for new mac setup, it assumes it can overwrite files.
 Make backups if you are unsure about anything.
 
 I copied the code from `setup_mac.sh` from the repo in a browser window and
@@ -105,9 +105,9 @@ Here's what `update_local.sh` will do:
 * Set your working directory to `~/code/dotfiles`
 * Pull from the dotfiles remote
 * Install the dependencies from the `Brewfile`
-* Overwite and source `~/.zshrc`
+* Overwrite and source `~/.zshrc`
 * Install extensions for VSCode
-* Overwite your local `settings.json` with `settings.json` from the repo
+* Overwrite your local `settings.json` with `settings.json` from the repo
 
 ## Future Enhancements
 
@@ -129,6 +129,7 @@ Current state:
 Things to do:
 
 * Revisit VS code Settings
+* Revisit dbt power user extension installs -- need to figure out if ordering is required. Had to uninstall all dbt power user dependencies and install it first.
 * Do some dbt work and finish fleshing out aliases etc in .zshrc
 * Add git aliases - use MH dotfiles as inspo
 * Add audithelper to dbt project
@@ -138,7 +139,7 @@ Things to do:
 ## Resources I looked at along the way
 
 * [Brew bundle quick guide](https://tomlankhorst.nl/brew-bundle-restore-backup/)
-* [Parsing text file arguements to commands](https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command)
+* [Parsing text file arguments to commands](https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command)
 * [Get dbt up and running from the command line on a MacBook with an M1 chip](https://discourse.getdbt.com/t/get-dbt-up-and-running-from-the-command-line-on-a-macbook-with-an-m1-chip/2908)
 * [GClunies dotfile repo](https://github.com/GClunies/.dotfile)
 * [Moncef Belyamani automating new mac setup](https://www.moncefbelyamani.com/automating-the-setup-of-a-new-mac-with-all-your-apps-preferences-and-development-tools/)
