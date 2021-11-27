@@ -8,7 +8,8 @@ VSCode for your development environment.
 ### Do the basics then install iTerm2
 
 Open your new mac and go through all the setup screens - this takes a little
-while. Once complete, you'll need to download and install [iTerm2](https://iterm2.com/). When I did this, I was notified that I needed to install:
+while. Once complete, you'll need to download and install [iTerm2](https://iterm2.com/).
+When I did this, I was notified that I needed to install:
 
 * Developer tools
 * Message about installing pip3
@@ -37,9 +38,10 @@ remove anything you don't need.
 * Install [Oh-My-Zsh](https://ohmyz.sh/)
 * Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * Copy the `.zshrc` from this repo to `~/.zshrc`
+* Enables the [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) for Oh-My-Zsh, see the link for the aliases this will install
 * Install VSCode extensions [with the command line](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management). You can find the extensions that will be installed in `vscode-extensions.txt`
 * Create the VSCode `settings.json` if it does not exist and copy the `settings.json` from this repo to the appropriate location
-* Clone my local testing [jaffle_shop](https://github.com/erika-e/jaffle_shop) dbt project and append a `jaffle_shop` profile to your profiles.yml if it already existed
+* Clone my local testing [jaffle_shop](https://github.com/erika-e/jaffle_shop) dbt project and append a `jaffle_shop` profile to your profiles.yml if it already existed. See the repo README for instructions on testing your dbt setup with this project.
 
 ## Run the setup script
 
@@ -143,7 +145,6 @@ Things to do:
 
 * Revisit VS code Settings
 * Do some dbt work and finish fleshing out aliases etc in .zshrc
-* Add git aliases - use MH dotfiles as inspo
 * Add audithelper to dbt project
 * Add sqlfluff 
 * Add default dbt deps file
