@@ -19,5 +19,32 @@
 
     // easier to see if there are unsaved changes
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.labelFormat": "medium"
+    "workbench.editor.labelFormat": "medium",
+
+    // Configure spell checking extension
+    // The Language local to use when spell checking. "en", "en-US" and "en-GB" are currently supported by default.
+    "cSpell.language": "en",
+
+    // Controls the maximum number of spelling errors per document.
+    "cSpell.maxNumberOfProblems": 100,
+
+    // Controls the number of suggestions shown.
+    "cSpell.numSuggestions": 8,
+
+    // The minimum length of a word before checking it against a dictionary.
+    "cSpell.minWordLength": 4,
+
+    // Specify file types to spell check.
+    // This is a preference thing, but I only want to spell check docs and md files
+    "cSpell.enabledLanguageIds": [
+        "markdown",
+        "yml"
+    ],
+
+    // Enable / Disable the spell checker.
+    "cSpell.enabled": true,
+
+    // User words to add to dictionary.  Should only be in the user settings.
+    "cSpell.userWords": ["dotfile", "brewfile", "jaffle"],
+
 }
