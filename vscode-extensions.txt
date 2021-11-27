@@ -1,15 +1,15 @@
+ms-python.python
+innoverio.vscode-dbt-power-user
 andyyaldoo.vscode-json
 bastienboutonnet.vscode-dbt
 bcanzanella.openmatchingfiles
 cschleiden.vscode-github-actions
 DavidAnson.vscode-markdownlint
 GitHub.vscode-pull-request-github
-innoverio.vscode-dbt-power-user
 kopub.pydocstring
 mechatroner.rainbow-csv
 mhutchie.git-graph
 ms-azuretools.vscode-docker
-ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
