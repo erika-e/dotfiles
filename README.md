@@ -59,6 +59,13 @@ I didn't get docker to install from brew, though some folks
 I went to the [Docker website](https://docs.docker.com/desktop/mac/apple-silicon/)
 and installed it manually.
 
+Python dependency management is one of those things everyone does differently.
+I've included the `requirements.txt` file I used for my initial setup, but I
+didn't add it to the updating shell scripts. You can modify this repo to use
+your preferred dependency management solution. I have my VSCode Settings
+configured to auto-format with [black](https://github.com/psf/black). If you
+don't want this, remove the settings related to black from `settings.json`.
+
 ## What I can't Get Working on M1
 
 ### pgloader
@@ -93,7 +100,12 @@ Here's what `update_dotfiles.sh` will do:
 * Update `settings.json` with your VSCode settings
 
 The first time you run it, you need to run `chmod +x update_dotfiles.sh`, after
-that you'll be able to run `./update_dotfiles.sh` to run the script
+that you'll be able to run `source ./update_dotfiles.sh` to run the script.
+
+> 🤨 `source ./my_script.sh` or `./my_script.sh` ?
+>
+> To source `.zshrc` you need to be running the shell script in zsh. Use the
+> `source` command to be sure the script will run in zsh, not bash.
 
 ### `update_local.sh`
 
@@ -111,7 +123,8 @@ Here's what `update_local.sh` will do:
 
 ## Future Enhancements
 
-I'd love pull requests!
+I'd love pull requests! I've added a few issues for things I noticed while
+putting this together that I haven't had a chance to look at or fix.
 
 ## Below This Point Are Working Notes
 
@@ -129,12 +142,11 @@ Current state:
 Things to do:
 
 * Revisit VS code Settings
-* Revisit dbt power user extension installs -- need to figure out if ordering is required. Had to uninstall all dbt power user dependencies and install it first.
 * Do some dbt work and finish fleshing out aliases etc in .zshrc
 * Add git aliases - use MH dotfiles as inspo
 * Add audithelper to dbt project
+* Add sqlfluff 
 * Add default dbt deps file
-* Add spellchecking extension for VSCode
 
 ## Resources I looked at along the way
 
@@ -149,6 +161,8 @@ Things to do:
 * [VS Code Help Docs](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management)
 * [`code` command not working](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac)
 * [Brewfile Best Practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)
+* [VS Code Extensions for Working with dbt](https://gist.github.com/swanderz/5cf876d88c7c8d268d8c1e1e5d05bffd)
+* [dbt Discourse on Configuring VS Code](https://discourse.getdbt.com/t/setting-up-vscode-to-use-with-the-dbt-cli/3291)
 
 The resources above shaped my thinking and choices in this repo. As is usual in
 programming, I also consulted approx 1 million billion stack overflow posts.

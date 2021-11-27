@@ -45,6 +45,18 @@
     "cSpell.enabled": true,
 
     // User words to add to dictionary.  Should only be in the user settings.
-    "cSpell.userWords": ["dotfile", "brewfile", "jaffle"],
+    "cSpell.userWords": [
+        "dotfile",
+        "brewfile",
+        "jaffle"
+    ],
 
+    // Python formatter settings
+    "python.formatting.provider": "black",
+
+    // format on save for Python only
+    "editor.formatOnSave": false,
+    "[python]": {
+      "editor.formatOnSave": true,
+     },
 }
