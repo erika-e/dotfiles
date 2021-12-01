@@ -151,6 +151,22 @@ Here's what `update_local.sh` will do:
 | `dbt/audit_helper_template.sql` | dbt-audit-helper | A template file that works with a custom shell function to make audit helper ez-peasy | dbt, dbt-audit-helper |
 | `python/requirements.txt` | Python | Packages to install globally for Python, not required and not installed automatically by the setup script. Included for reference. | Python |
 
+## Design Decisions
+
+| Choice | Alternatives | Rationale |
+| --- | --- | --- |
+| Free over paid | e.g. DBeaver over Datagrip | Not everyone has the means to pay for software for learning or personal development |
+| Use VSCode | [Atom](https://discourse.getdbt.com/t/how-we-set-up-our-computers-for-working-on-dbt-projects/243), Sublime, vim | I do most of my day to day dbt work in VSCode, and I'm familiar with it. It's the editor I have the most familiarity with so it makes sense to stick with it. It's fairly popular in the dbt community |
+| Use the "standard" [git aliases in Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) | Other aliases, make up my own | Aligning to a standard that makes a large number of people happy is always a good idea. I could improve on these if needed, but it looks like they cover a lot of the bases already. |
+| Subdirectories for organization | All files in root | Looks like the vast majority of dotfiles introduce organization at some point. I started with all files in root and realized subdirectories wold help. My clue was the long list of "what this file is for" explanations I added to the `README` |
+| Custom shell scripts for updates | [dotfile utilities](https://dotfiles.github.io/utilities/) | For now, I'm choosing to keep things simple. These scripts aren't huge yet so they're still easy to follow. If there were many more tools or if I needed rules for different situations, that might change |
+| Symlink Oh-My-Zsh custom aliases | All in `.zshrc`, update with shell script, dotfile utilities | I am honestly not sure this was the right choice yet! At the time, it seemed simpler than the alternatives. |
+| Include a dbt project | Don't include a dbt project | I'm using an M1 Mac, and I wanted to know that dbt was doing exactly what it's supposed to do. I'm using this computer for personal projects, like this one, so I needed something simple to test the setup with |
+| Include Jekyll | Don't include Jekyll | Most people working on normal analytics engineering work won't need this. I put the installation in a separate script, but kept it in the same repo. |
+| Install Python with Homebrew | Anaconda, virtual environments, others | I haven't had issues with this approach, yet. I chose it for simplicity. I want Homebrew to manage as many of the installations and updates as possible |
+| Install dbt with Homebrew | Install dbt with pip | Homebrew is what [dbt recommends](https://docs.getdbt.com/dbt-cli/installation) and I haven't had issues |
+| Put dotfiles in a directory called code | Put dotfiles in home, or wherever user chooses | I like to keep all my repos in one directory, `~/code`. I find this convenient when I'm navigating around from the command line. This is a habit thing and not a decision based on a best practice. |
+
 ## Future Enhancements
 
 I'd love pull requests! I've added a few issues for things I noticed while
