@@ -25,6 +25,40 @@ git pull --rebase
 # Install dependencies from Brewfile
 brew bundle install
 
+# Check if anything in brew is outdated
+brew update
+
+echo 
+echo "The following are pinned and will be ignored if you upgrade"
+echo "To unpin use bup <formula>"
+brew list --pinned
+
+echo "Listing outdated"
+brew outdated
+
+# Ask before upgrading
+if read -q "choice?Enter Y/y to upgrade all, or upgrade individually with brew upgrade <formula>: ";
+then
+    echo "Upgrading brew formulae and casks"
+    brew upgrade
+    brew cu
+else
+    echo
+    echo "'$choice' not 'Y' or 'y'. Skipping on"
+fi
+
+# .zsh files in dotfiles/oh-my-zsh have remote changes because they are symlinked
+# files removed from the remote will remain in the ~/.oh-my-zsh/custom directory
+# unless they are removed
+# To remove files you no longer want, use 
+# rm ~/.oh-my-zsh/custom/file-to-remove.zsh
+# To remove all symlinks in the oh-my-zsh/custom directory use
+# find ~/.oh-my-zsh/custom -type l | xargs rm
+
+# Add any new .zsh file symlinks
+echo "Updating symlinks"
+ln -s ~/code/dotfiles/oh-my-zsh/*.zsh ~/.oh-my-zsh/custom
+
 # Copy and source ~/.zshrc
 cp .zshrc ~/.zshrc
 source ~/.zshrc

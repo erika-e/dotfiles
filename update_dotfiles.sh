@@ -11,15 +11,26 @@ echo "Updating dotfiles repository with local configuration"
 # Update the Brewfile
 brew bundle dump --force
 
-# Update everything installed, except python and dbt 
-# Python and dbt were pinned by the setup script
-# brew list --pinned
-# brew unpin python
-# brew unpin dbt
-
+# Check if anything in brew is outdated
 brew update
-brew upgrade
-brew cu
+
+echo 
+echo "The following are pinned and will be ignored if you upgrade"
+brew list --pinned
+
+echo "Listing outdated"
+brew outdated
+
+# Ask before upgrading
+if read -q "choice?Enter Y/y to upgrade all, or upgrade individually with brew upgrade <formula>: ";
+then
+    echo "Upgrading brew formulae and casks"
+    brew upgrade
+    brew cu
+else
+    echo
+    echo "'$choice' not 'Y' or 'y'. Skipping on"
+fi
 
 # .zsh files in dotfiles/oh-my-zsh have local changes because they are symlinked
 # To remove files you no longer want, use 
