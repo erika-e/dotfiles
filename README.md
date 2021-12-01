@@ -39,6 +39,7 @@ remove anything you don't need.
 * Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * Copy the `.zshrc` from this repo to `~/.zshrc`
 * Enables the [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) for Oh-My-Zsh, see the link for the aliases this will install
+* Symlink the `.zsh` files in `oh-my-zsh` to the appropriate directory for Oh My Zsh to source them
 * Install VSCode extensions [with the command line](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management). You can find the extensions that will be installed in `vscode-extensions.txt`
 * Create the VSCode `settings.json` if it does not exist and copy the `settings.json` from this repo to the appropriate location
 * Clone my local testing [jaffle_shop](https://github.com/erika-e/jaffle_shop) dbt project and append a `jaffle_shop` profile to your profiles.yml if it already existed. See the repo README for instructions on testing your dbt setup with this project.
@@ -83,6 +84,20 @@ As you work, you may want to continue to customize these files for your purposes
 I've added two scripts that will help keep things up to date so I don't have to
 remember and run shell commands all the time.
 
+### Updating Oh-My-Zsh Aliases and Functions
+
+Oh-My-Zsh looks for aliases in `.zshrc` and in `*.zsh` files in `~/.oh-my-zsh/custom`.
+I started out with all my aliases in `.zshrc`, but finding the right place in
+the file got annoying.
+
+The alias files are located in `dotfiles/oh-my-zsh` and are organized by tool.
+The setup script symlinks them to the `~/.oh-my-zsh/custom` directory. Changes
+made to the files in either directory will update the file in the other directory.
+
+You'll still need to commit changes back to the dotfiles repo. If you change
+`~/.oh-my-zsh/custom/dbt.zsh` the file in `../dotfiles/oh-my-zsh/dbt.zsh` will
+reflect those changes and git will notice that it has been modified.
+
 ### `update_dotfiles.sh`
 
 This script copies dotfiles, settings, and your Brewfile from your local machine
@@ -125,16 +140,16 @@ Here's what `update_local.sh` will do:
 
 ## What's in this Repository
 
-| File Name | Associated With | Short Description | Requires |
+| File | Associated With | Short Description | Requires |
 | --- | --- | --- | --- |
 | `.zshrc` | zsh, Oh-My-Zsh | Z-shell resource file, runs every time zsh is started. Contains plugins, aliases, functions | Oh-My-Zsh |
 | `Brewfile` | Homebrew | File listing packages and programs installed by Homebrew | Homebrew |
-| `vscode-extensions.txt` | VS Code | File listing extensions to install for VS Code | VSCode, `code` command line tools |
-| `settings.json` | VS Code | Settings file for VSCode | VSCode, the extensions listed in `vscode-extensions.txt` |
-| `profiles.yml` | dbt | Sample `profiles.yml` file, see [dbt docs](https://docs.getdbt.com/dbt-cli/configure-your-profile) for more | dbt |
-| `packages.yml` | dbt | Sample `packages.yml` file. This contains the packages I always want when working with dbt | dbt |
-| `audit_helper_template.sql` | dbt-audit-helper | A template file that works with a custom shell function to make audit helper ez-peasy | dbt, dbt-audit-helper |
-| `requirements.txt` | Python | Packages to install globally for Python, not required and not installed automatically by the setup script. Included for reference. | Python |
+| `vscode/extensions.txt` | VS Code | File listing extensions to install for VS Code | VSCode, `code` command line tools |
+| `vscode/settings.json` | VS Code | Settings file for VSCode | VSCode, the extensions listed in `vscode-extensions.txt` |
+| `dbt/profiles.yml` | dbt | Sample `profiles.yml` file, see [dbt docs](https://docs.getdbt.com/dbt-cli/configure-your-profile) for more | dbt |
+| `dbt/packages.yml` | dbt | Sample `packages.yml` file. This contains the packages I always want when working with dbt | dbt |
+| `dbt/audit_helper_template.sql` | dbt-audit-helper | A template file that works with a custom shell function to make audit helper ez-peasy | dbt, dbt-audit-helper |
+| `python/requirements.txt` | Python | Packages to install globally for Python, not required and not installed automatically by the setup script. Included for reference. | Python |
 
 ## Future Enhancements
 
@@ -153,14 +168,15 @@ Current state:
 * Installs the VSCode extensions
 * Updates VSCode settings
 * Create a test dbt project
+* Do some dbt work and finish fleshing out aliases etc in .zshrc
+* Add audithelper to dbt project
+* Add default dbt deps file
 
 Things to do:
 
 * Revisit VS code Settings
-* Do some dbt work and finish fleshing out aliases etc in .zshrc
-* Add audithelper to dbt project
 * Add sqlfluff 
-* Add default dbt deps file
+* Add codegen helpers
 
 ## Resources I looked at along the way
 
