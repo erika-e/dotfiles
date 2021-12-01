@@ -1,8 +1,15 @@
 {   
     // associate SQL files with better jinja extension
     "files.associations": {
-        "*.sql": "jinja-sql"
+        //all SQL files with better jinja
+        "*.sql": "jinja-sql",
+        //dbt snippet associations for vscode-dbt
+        "**/code/**/**/*.yaml": "jinja-yaml",
+        "**/code/**/**/*.yml": "jinja-yaml",
+        "**/code/**/**/*.sql": "jinja-sql",
+        "**/code/**/**/docs/**/*.md": "jinja-md"
     },
+    
     //auto-added by Jupyter extension?
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"

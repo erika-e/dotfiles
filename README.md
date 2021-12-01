@@ -187,13 +187,18 @@ Current state:
 * Do some dbt work and finish fleshing out aliases etc in .zshrc
 * Add audithelper to dbt project
 * Add default dbt deps file
+* Revisit VS code Settings
+* Snippets for dbt update vs code settings
 
 Things to do:
 
-* Revisit VS code Settings
+
 * Add sqlfluff
+* Finish updating README
 * Gitignore template
 * Add codegen helpers
+* Retest everything
+* Update resources again
 
 ## Resources I looked at along the way
 
