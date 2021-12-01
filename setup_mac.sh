@@ -48,6 +48,9 @@ then echo "zsh-autosuggestions is in the house" ; \
 else echo "Installing zsh-autosuggestions" && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; \
 fi
 
+# symlink custom alias files from dotfiles to the oh-my-zsh custom folder
+ln -s ~/code/dotfiles/oh-my-zsh/*.zsh ~/.oh-my-zsh/custom
+
 # Copy and source ~/.zshrc
 cp .zshrc ~/.zshrc
 source ~/.zshrc
@@ -55,13 +58,13 @@ source ~/.zshrc
 # Install extensions for VSCode
 # https://unix.stackexchange.com/questions/149726/how-to-parse-each-line-of-a-text-file-as-an-argument-to-a-command
 # < file tr '\n' '\0' | xargs -0 -I{} command --option {} this shell script can do it
-< vscode-extensions.txt tr '\n' '\0' | xargs -0 -I{} code --install-extension {}
+< vscode/vscode-extensions.txt tr '\n' '\0' | xargs -0 -I{} code --install-extension {}
 
 # Create the VSCode settings file
 touch "$HOME/Library/Application Support/Code/User/settings.json"
 
 # Copy the template settings file to the system location
-cp settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+cp vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
 # Set up a sandbox dbt project
 cd ~/code

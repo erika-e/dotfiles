@@ -65,7 +65,10 @@ ZSH_THEME="robbyrussell"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/code/dotfiles
+# ZSH_CUSTOM=$HOME/code/dotfiles
+# If you set your custom folder somewhere else and want to put back the default
+# use the line below
+# ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/

@@ -9,9 +9,7 @@ alias dbtds="dbt docs serve"
 alias dbtc="dbt compile"
 alias dbtfresh="dbt clean" #so fresh and so clean clean
 
-# Functions
-
-# Functions
+# dbt Functions
 
 # Run specific model with fail fast flag
 function dbtrff() {
