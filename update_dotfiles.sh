@@ -11,7 +11,12 @@ echo "Updating dotfiles repository with local configuration"
 # Update the Brewfile
 brew bundle dump --force
 
-# Update everything installed
+# Update everything installed, except python and dbt 
+# Python and dbt were pinned by the setup script
+# brew list --pinned
+# brew unpin python
+# brew unpin dbt
+
 brew update
 brew upgrade
 brew cu

@@ -33,6 +33,10 @@ cd dotfiles
 # Install dependencies from Brewfile
 brew bundle install
 
+# Pin python and dbt so they don't update automatically
+brew pin python
+brew pin dbt
+
 # Install OH-MY-ZSH and auto suggestions
 # https://ohmyz.sh/
 
@@ -78,4 +82,4 @@ mkdir -p ~/.dbt
 touch ~/.dbt/profiles.yml
 
 #Append the contents of the sample profiles.yml to the existing profiles.yml
-cat dotfiles/profiles.yml >> ~/.dbt/profiles.yml
+cat dotfiles/dbt/profiles.yml >> ~/.dbt/profiles.yml
