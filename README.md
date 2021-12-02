@@ -190,11 +190,10 @@ Current state:
 * Revisit VS code Settings
 * Snippets for dbt update vs code settings
 * Finish updating README
+* Basic sqlfluff
 
 Things to do:
 
-
-* Add sqlfluff
 * Gitignore template
 * Add codegen helpers
 * Retest everything

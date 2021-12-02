@@ -1,0 +1,48 @@
+[tool.sqlfluff.core]
+templater = "dbt"
+sql_file_exts = ".sql,.sql.j2,.dml,.ddl"
+
+[sqlfluff:templater:dbt]
+project_dir = <relative or absolute path to dbt_project directory> # "." if this file is in your project root
+profiles_dir = <relative or absolute path to the directory that contains the profiles.yml file> # "~/.dbt/" for most mac users
+profile = <dbt profile> # usually matched to the name of the project, e.g. jaffle_shop
+
+[sqlfluff:indentation]
+indented_joins = True
+
+[sqlfluff]
+verbose = 1
+exclude_rules = L011,L031,L044,L052
+
+# General Configuration for Rules
+[sqlfluff:rules]
+max_line_length = 80
+ignore_comment_lines = False
+indent_unit = space
+tab_space_size = 2
+
+# Configuration organized by first applicable rule
+
+# No yelling keywords, thanks
+[sqlfluff:rules:L010]
+capitalization_policy = lower
+
+# Column names always aliased if expressions
+[sqlfluff:rules:L013]
+allow_scalar = False 
+
+# I have spoken
+[sqlfluff:rules:L019]
+comma_style = leading
+
+[sqlfluff:rules:L027]
+single_table_references = consistent
+
+[sqlfluff:rules:L029]
+unquoted_identifiers_policy = all
+
+[sqlfluff:rules:L042]
+forbid_subquery_in = both
+
+
+
