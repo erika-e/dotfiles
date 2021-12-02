@@ -189,12 +189,12 @@ Current state:
 * Add default dbt deps file
 * Revisit VS code Settings
 * Snippets for dbt update vs code settings
+* Finish updating README
 
 Things to do:
 
 
 * Add sqlfluff
-* Finish updating README
 * Gitignore template
 * Add codegen helpers
 * Retest everything
