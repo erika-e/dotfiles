@@ -170,34 +170,7 @@ Here's what `update_local.sh` will do:
 ## Future Enhancements
 
 I'd love pull requests! I've added a few issues for things I noticed while
-putting this together that I haven't had a chance to look at or fix.
-
-## Below This Point Are Working Notes
-
-Current state:
-
-* Installs homebrew
-* Installs git from the command line with brew
-* Installs brewfile dependencies
-* Installs oh my zsh
-* Fixed zsh-autosuggestions
-* Installs the VSCode extensions
-* Updates VSCode settings
-* Create a test dbt project
-* Do some dbt work and finish fleshing out aliases etc in .zshrc
-* Add audithelper to dbt project
-* Add default dbt deps file
-* Revisit VS code Settings
-* Snippets for dbt update vs code settings
-* Finish updating README
-* Basic sqlfluff
-
-Things to do:
-
-* Gitignore template
-* Add codegen helpers
-* Retest everything
-* Update resources again
+putting this together that I haven't had a chance to look at or improve.
 
 ## Resources I looked at along the way
 
@@ -214,6 +187,10 @@ Things to do:
 * [Brewfile Best Practices](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)
 * [VS Code Extensions for Working with dbt](https://gist.github.com/swanderz/5cf876d88c7c8d268d8c1e1e5d05bffd)
 * [dbt Discourse on Configuring VS Code](https://discourse.getdbt.com/t/setting-up-vscode-to-use-with-the-dbt-cli/3291)
+* [Managing your dotfiles](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
+* [Dotfiles are Meant to Be Forked](https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/)
+* [oh-my-zsh and persistent aliases](https://stephencharlesweiss.com/oh-my-zsh-and-persistent-aliases)
+* [GitHub dotfiles page](https://dotfiles.github.io/)
 
 The resources above shaped my thinking and choices in this repo. As is usual in
 programming, I also consulted approx 1 million billion stack overflow posts.
