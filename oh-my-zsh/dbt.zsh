@@ -40,3 +40,49 @@ function dbtah() {
     gsed -i "s/$1/model_to_audit/" analysis/audit_helper_template.sql
     say copy pasta
 }
+
+# dbtcodegen generate yaml model
+function dbtcgmy () {
+    read "model_name?Enter the name of the model: "
+
+    dbt run-operation generate_model_yaml --args '{"model_name":"'${model_name}'"}' | awk '!/^Running with dbt=/' | pbcopy | pbpaste
+}
+
+# dbtcodegen generate base model
+function dbtcgbm () {
+    # Requires dbt-codegen, must be executed from a directory with a valid dbt project
+    read "source_name?Enter the source for the base model: "
+    read "table_name?Enter the table name for the base model: "
+    if read -q "choice?Enter Y/y for leading commas: ";
+    then
+        leading_commas="True"
+    else
+        leading_commas="False"
+    fi
+
+    #pbcopy and pbpaste ensures user can either copy output or direct it to a file
+    
+    dbt run-operation generate_base_model --args '{"source_name":"'${source_name}'","table_name":"'${table_name}'","leading_commas":'${leading_commas}'}' | awk '!/^Running with dbt=/' | pbcopy | pbpaste
+}
+
+# dbtcodegen generate source yaml
+function dbtcgsy () {
+    read "schema_name?Enter the schema name for the sources you'd like to generate"
+    read "database_name?Enter the database name for the sources you'd like to generate"
+    if read -q "choice_1?Enter Y/y to generate columns";
+    then 
+        generate_columns="True"
+    else
+        generate_columns="False"
+    fi
+
+    if read -q "choice_2?Enter Y/y to include_descriptions";
+    then
+        include_descriptions="True"
+    else
+        include_descriptions="False"
+    fi
+
+    dbt run-operation generate_source --args '{"schema_name":"'${schema_name}'","database_name":"'${database_name}'","generate_columns":'${generate_columns}',"include_descriptions":'${include_descriptions}'}' | awk '!/^Running with dbt=/' | pbcopy | pbpaste
+
+}
