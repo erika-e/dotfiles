@@ -38,6 +38,9 @@ fi
 # To remove all symlinks in the oh-my-zsh/custom directory use
 # find ~/.oh-my-zsh/custom -type l | xargs rm
 
+# Update requirements.txt for Python
+pip3 freeze > python/requirements.txt
+
 # Update .zshrc
 cp ~/.zshrc .zshrc
 
