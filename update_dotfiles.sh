@@ -58,4 +58,4 @@ gsed -i '/innoverio.vscode-dbt-power-user/d;1i\innoverio.vscode-dbt-power-user' 
 gsed -i '/ms-python.python/d;1i\ms-python.python' vscode/extensions.txt 
 
 # Overwrite settings.json with the local VSCode settings file
-cp "$HOME/Library/Application Support/Code/User/settings.json" settings.json
+cp "$HOME/Library/Application Support/Code/User/settings.json" vscode/settings.json

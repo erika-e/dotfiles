@@ -64,6 +64,6 @@
     // format on save for Python only
     "editor.formatOnSave": false,
     "[python]": {
-      "editor.formatOnSave": true,
-     },
+      "editor.formatOnSave": true
+     }
 }
