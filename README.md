@@ -9,12 +9,10 @@ VSCode for your development environment.
 
 Open your new mac and go through all the setup screens - this takes a little
 while. Once complete, you'll need to download and install [iTerm2](https://iterm2.com/).
-When I did this, I was notified that I needed to install:
 
-* Developer tools
-* Message about installing pip3
-
-Let's hope neither of those cause problems later
+I got a popup on install that notified me that the pip3 commmand requires the
+command line developer tools. I chose install to allow the installation of the
+developer tools.
 
 Open applications in Finder. Using the options menu in the top right or a right
 click, open the menu for iTerm and select `Duplicate`. On the new copy, select
