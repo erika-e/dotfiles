@@ -1,6 +1,6 @@
 # dbt Configuration
 
-## dbt Must-Haves
+## dbt Must-Have Packages
 
 I'll want the packages in `packages.yml` on any dbt project I work on.
 
@@ -26,11 +26,31 @@ like using `say done` at the end of the function. If a model takes long enough
 to run for me to get distracted this calls my attention back to the task at hand
 as soon as it's done.
 
-### `dbtah`
+#### dbt-audit-helper `dbtah`
 
 This function will compile the `audit_helper_template` for the model you specify,
 remove the pesky whitespace, and copy the output to the clipboard so you can run
 it in your query tool of choice.
+
+#### dbt-codegen functions
+
+I 🧡 dbt-codegen. It's a definite timesaver. It was a pain to remember the
+arguments and their names and I found myself looking them up every time I used
+them.
+
+This family of shell functions uses prompts to get all the required information
+from you, so you don't have to remember the argument names.
+
+By default, each function copies the output from itself to the clipboard and
+pastes it into the terminal. This means you can redirect the output to a new
+file or append it to an existing file with `dbtcgmy > my_new_file.yml` or
+`dbtcgmy >> my_existing_file.yml`
+
+These functions cover all 3 of the macros in dbt-codegen:
+
+* `dbtcgmy` - generate model yaml
+* `dbtcgsy` - generate source yaml
+* `dbtcggbm` - generate base model
 
 ## SQL linting with SQLfluff
 
