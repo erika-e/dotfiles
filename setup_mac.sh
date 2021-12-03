@@ -33,7 +33,7 @@ cd dotfiles
 # Install dependencies from Brewfile
 brew bundle install
 
-# Pin python and dbt so they don't update automatically
+# Pin python and dbt so they do not update automatically
 brew pin python
 brew pin dbt
 
@@ -41,15 +41,15 @@ brew pin dbt
 # https://ohmyz.sh/
 
 # Check for and install oh-my-zsh if not already installed
-if [ -d ~/.oh-my-zsh ]; \
-then echo "oh-my, it's already installed" ; \
-else echo "oh-my-zsh not installed, installing..." && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; \
+if [ -d ~/.oh-my-zsh ];
+then echo "oh-my, it's already installed" ;
+else echo "oh-my-zsh not installed, installing..." && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ; 
 fi
 
 # Check for and install zsh-autosuggestions
-if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] ; \
-then echo "zsh-autosuggestions is in the house" ; \
-else echo "Installing zsh-autosuggestions" && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ; \
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] ; 
+then echo "zsh-autosuggestions is in the house" ; 
+else echo "Installing zsh-autosuggestions" && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ;
 fi
 
 # symlink custom alias files from dotfiles to the oh-my-zsh custom folder
@@ -75,10 +75,10 @@ cd ~/code
 if [ -d jaffle_shop ]; then rm -rf jaffle_shop ; fi
 git clone https://github.com/erika-e/jaffle_shop.git
 
-# Create a dbt directory if it doesn't exist
+# Create a dbt directory if it does not exist
 mkdir -p ~/.dbt
 
-# Create profiles.yml if it doesn't exist
+# Create profiles.yml if it does not exist
 touch ~/.dbt/profiles.yml
 
 #Append the contents of the sample profiles.yml to the existing profiles.yml
