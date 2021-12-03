@@ -1,4 +1,7 @@
+setopt interactivecomments
 # setup_mac.sh
+
+# Without the setopt command zsh will sometimes give an error message about # not recognized
 
 # Install homebrew
 # https://brew.sh/
