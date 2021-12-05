@@ -1,5 +1,6 @@
 # This is an example file for a local postgres instance
-# Never commit your profiles.yml file! It should never be located within your dbt project.
+# Never commit your profiles.yml file with connection information visible!
+# It will live safely in the ~/.dbt/ directory by default.
 
 jaffle_shop:
   target: local
@@ -13,4 +14,25 @@ jaffle_shop:
       dbname: postgres
       schema: public
       threads: 1
+
+    # If you do need to commit your profiles.yml file so it's accessible to other remote applications (eg. continuous integration)
+    # or just want to standardize + version control the format for your team,
+    # then make use of dbt's env_var function to securely pass database connection information in as environment variables.
+    remote:
+      type: postgres
+      host: "{{ env_var('PG_HOST') }}"
+      user: "{{ env_var('PG_USER') }}"
+      pass: "{{ env_var('PG_PASS') }}"
+      port: "{{ env_var('PG_PORT') }}"
+      dbname: "{{ env_var('PG_DB') }}"
+      schema: "{{ env_var('PG_DB_SCHEMA') }}"
+      threads: 1
+
+    # Note on the remote env_var example directly above:
+    # As this file likely now lives in your dbt-proj folder (and not the default ~/.dbt/), you need to tell dbt where to find it
+    
+    # This can easily be done by setting the below environment variable:
+    # export DBT_PROFILES_DIR=path/to/directory
+
+    # https://docs.getdbt.com/dbt-cli/configure-your-profile#using-a-custom-profile-directory
 
