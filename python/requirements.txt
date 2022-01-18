@@ -31,7 +31,7 @@ networkx==2.6.3
 packaging==20.9
 parsedatetime==2.6
 pathspec==0.9.0
-pipenv==2021.11.23
+pipenv==2022.1.8
 platformdirs==2.4.0
 psycopg2-binary==2.9.2
 pycparser==2.21
